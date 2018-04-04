@@ -6,6 +6,8 @@ SourceDir=./
 PacketDir=./
 OutputDir=../Output/
 
+Limit=10
+
 echo $f #
 if [ ! -d ${OutputDir} ]; then
 	mkdir -p ${OutputDir}/
@@ -14,5 +16,5 @@ fi
 File=${SourceDir}/${RuleList}.rules
 Output=${OutputDir}/${RuleList}.rules.csv
 Packets=${PacketDir}/${RuleList}.rules.trace
-./main f=${File} c=${Classifiers} o=${Output} Forge.Limit.Insert=${Limit} Forge.Limit.Build=${Limit} Forge.Limit.Collide=${Limit} p=${Packets}
+./main f=${File} c=${Classifiers} o=${Output} TM.Limit.Collide=${Limit} p=${Packets}
 
